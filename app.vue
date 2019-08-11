@@ -164,27 +164,6 @@
                     searchJSON:this.searchJSON
                 })
             },
-            getSearchData(searchJSON){
-//                console.log(searchJSON, '这是搜索的内容');
-                this.searchJSON=searchJSON;
-                this.subSearchCondition();
-            },
-            getTabLabelNumber(){
-                let _this=this;
-
-                this.$http.get(this.urlJSON.getTabNumber, {
-                }).then((response) => {
-                    if(response.data.code=='bl-100')
-                    {
-                        this.labelInviteTotal=response.data.data.inviteProjectCount || 0;
-                        this.labelGoingQuoteTotal=response.data.data.goingProjectCount || 0;
-                        this.labelDoneQuoteTotal=response.data.data.endedProjectCount || 0;
-                    }
-                }, () => {
-                    console.log('error');
-                });
-            },
-
         },
 
     }
